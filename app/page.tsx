@@ -1,9 +1,9 @@
 'use client'
-import { useUser } from "@clerk/nextjs";
+// import { useUser } from "@clerk/nextjs";
 import { Card } from "@chakra-ui/react"
 
 export default function Home() {
-  const { user } = useUser();
+  // const { user } = useUser();
   // console.log(user?.firstName)
 
   return (
