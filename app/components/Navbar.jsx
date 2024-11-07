@@ -1,39 +1,63 @@
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, Image} from "@nextui-org/react";
+'use client'
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Image} from "@nextui-org/react";
+import React from "react";
+import { Menu, X } from '@geist-ui/icons'
 
 
 export default function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+
+  const menuItems = [
+    "About",
+    "Courses",
+    "Events",
+    "Contact Us"
+  ];
+
   return (
-    <Navbar>
+    <Navbar shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
       <NavbarBrand>
-        <Image src="/QBLogo.jpg" alt="Logo" className="size-14 rounded-none"  />
+        <p className="font-cormorantGaramond text-xl font-extrabold">Quranbound</p>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      {/* <NavbarContent className="hidden sm:flex gap-4 text-sm font-geistSans" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+          <Link color="foreground" href="/about">
+            About
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
+          <Link color="foreground" href="/courses">
+            Courses
           </Link>
         </NavbarItem>
-      </NavbarContent>
+        <NavbarItem>
+          <Link color="foreground" href="/events">
+            Events
+          </Link>
+        </NavbarItem>
+      </NavbarContent> */}
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
+        <NavbarMenuToggle
+          icon={Menu}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className=""
+        />
       </NavbarContent>
+      <NavbarMenu >
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              color='foreground'
+              className="w-full text-base font-medium"
+              href={`/${item.toLowerCase()}`}
+              size="lg"
+            >
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+
     </Navbar>
   );
 }

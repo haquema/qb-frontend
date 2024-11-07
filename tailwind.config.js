@@ -14,6 +14,11 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        geistSans: ['var(--font-geist-sans)'],
+        geistMono: ['var(--font-geist-mono)'],
+        cormorantGaramond: ['var(--font-cormorant-garamond)'],
+      },
     },
   },
   darkMode: "class",

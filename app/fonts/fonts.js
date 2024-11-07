@@ -1,10 +1,10 @@
 import localFont from "next/font/local";
+import { Cormorant_Garamond } from "next/font/google"
 
-
-const cormorantGaramond = localFont({
-  src: "./CormorantGaramond-Regular.ttf",
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cormorant-garamond",
-  weight: "100 900"
 })
 
 const geistSans = localFont({
