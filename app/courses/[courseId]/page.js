@@ -14,7 +14,7 @@ export default async function Page({ params }) {
           alt='Man holding a Quran'
         />
         <h1
-          className='absolute top-10 p-4 text-center z-10 font-barlow font-extrabold uppercase whitespace-nowrap'
+          className='absolute top-5 p-4 text-center z-10 font-barlow font-extrabold uppercase whitespace-nowrap'
           style={{
             fontSize: "clamp(1.5rem, 2vw + 1rem, 2.5rem)",
             maxWidth: "calc(100% - 2rem)",
@@ -36,6 +36,24 @@ export default async function Page({ params }) {
           </p>
           <Button color="primary" radius="sm" className='self-center w-24' size="sm">Enrol Now</Button>
         </span>
+      </div>
+      <div className='grid grid-cols-4 items-start justify-items-center bg-neutral-700 py-4 text-2xl text-center'>
+        <div className='flex flex-col items-center w-32'>
+          <p className=' font-extrabold'>500+</p>
+          <p className='text-base font-medium'>students</p>
+        </div>
+        <div className='flex flex-col items-center w-32'>
+          <p className=' font-extrabold'>120+</p>
+          <p className='text-base font-medium'>hours of educational content</p>
+        </div>
+        <div className='flex flex-col items-center w-32'>
+          <p className=' font-extrabold'>50+</p>
+          <p className='text-base font-medium'>exclusive learning resources</p>
+        </div>
+        <div className='flex flex-col items-center w-32'>
+          <p className=' font-extrabold'>5</p>
+          <p className='text-base font-medium'>years strong</p>
+        </div>
       </div>
     </div>
   )
