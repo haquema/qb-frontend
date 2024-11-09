@@ -19,6 +19,7 @@ module.exports = {
         geistMono: ['var(--font-geist-mono)'],
         cormorantGaramond: ['var(--font-cormorant-garamond)'],
         barlow: ['var(--font-barlow)'],
+        fahkwang: ['var(--font-fahkwang)'],
       },
     },
   },

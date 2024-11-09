@@ -23,3 +23,11 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+p.stat {
+  @apply text-xs font-medium
+}
+
+div.stat {
+  @apply flex flex-col items-center w-24 sm:w-32
+}

@@ -38,21 +38,42 @@ export default async function Page({ params }) {
         </span>
       </div>
       <div className='grid grid-cols-4 items-start justify-items-center bg-neutral-700 py-4 text-2xl text-center'>
-        <div className='flex flex-col items-center w-32'>
+        <div className='stat'>
           <p className=' font-extrabold'>500+</p>
-          <p className='text-base font-medium'>students</p>
+          <p className='stat'>students</p>
         </div>
-        <div className='flex flex-col items-center w-32'>
+        <div className='stat'>
           <p className=' font-extrabold'>120+</p>
-          <p className='text-base font-medium'>hours of educational content</p>
+          <p className='stat'>hours of educational content</p>
         </div>
-        <div className='flex flex-col items-center w-32'>
+        <div className='stat'>
           <p className=' font-extrabold'>50+</p>
-          <p className='text-base font-medium'>exclusive learning resources</p>
+          <p className='stat'>exclusive learning resources</p>
         </div>
-        <div className='flex flex-col items-center w-32'>
+        <div className='stat'>
           <p className=' font-extrabold'>5</p>
-          <p className='text-base font-medium'>years strong</p>
+          <p className='stat'>years strong</p>
+        </div>
+      </div>
+      <div className="flex flex-col w-full bg-black p-8">
+        <div className="self-center flex flex-col items-center gap-2">
+          <h2 className="uppercase self-center font-black text-2xl">The Programme</h2>
+          <p className="uppercase text-base font-semibold">Our Vision</p>
+          <p className="text-white text-sm"><span className="text-yellow-300">Experience</span> the <span className="text-yellow-300">Quran</span> as it was first <span className="text-yellow-300">Revealed</span></p>
+        </div>
+        <div className='grid grid-cols-1 sm:grid-cols-2 my-10'>
+          <p className='text-sm font-fahkwang px-2'>
+            We all learn HOW to recite the Quran, but we don&#39;t learn WHAT we&#39;re reciting.<br />
+            <br />
+            At the core of our vision is the belief every Muslim should be able to read and
+            understand the Quran as it was revealed.<br />
+            <br />
+            While translations do a great job of conveying the basic meanings, they fail to
+            capture the feel, experience, and essence of the Quran.<br />
+            <br />
+            Our programme aims to bridge this gap by teaching you the fundamental rules,
+            vocabulary, and skills you need to truly understand the Quran you recite so beautifully.
+          </p>
         </div>
       </div>
     </div>
