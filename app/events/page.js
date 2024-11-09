@@ -1,3 +1,7 @@
 export default function Page() {
-  return <h1>This is the events page</h1>
+  return (
+    <div className="flex w-full justify-center items-center h-80">
+      <p className="font-geistSans">Welcome to the events page</p>
+    </div>
+  )
 }

@@ -16,9 +16,11 @@ export default function Navigation() {
 
   return (
     <Navbar shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
-      <NavbarBrand>
-        <p className="font-cormorantGaramond text-xl font-extrabold">Quranbound</p>
-      </NavbarBrand>
+      <Link href="/" color="foreground">
+        <NavbarBrand>
+          <p className="font-cormorantGaramond text-xl font-extrabold">Quranbound</p>
+        </NavbarBrand>
+      </Link>
       {/* <NavbarContent className="hidden sm:flex gap-4 text-sm font-geistSans" justify="center">
         <NavbarItem>
           <Link color="foreground" href="/about">
