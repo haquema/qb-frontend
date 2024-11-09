@@ -1,10 +1,16 @@
 import localFont from "next/font/local";
-import { Cormorant_Garamond } from "next/font/google"
+import { Cormorant_Garamond, Barlow } from "next/font/google"
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cormorant-garamond",
+})
+
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: ['300', '400' ,'500', '600'],
+  variable: "--font-barlow",
 })
 
 const geistSans = localFont({
@@ -18,4 +24,4 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export { cormorantGaramond, geistMono, geistSans }
+export { cormorantGaramond, geistMono, geistSans, barlow }

@@ -23,10 +23,6 @@ export default function CourseCard({ index, courseItem }) {
           src={courseItem.img}
         />
       </CardBody>
-      <CardFooter className="text-small justify-between">
-        <b className="text-black">{courseItem.title}</b>
-        <p className="text-default-500">{courseItem.price}</p>
-      </CardFooter>
     </Card>
   )
 }
