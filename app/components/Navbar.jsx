@@ -1,7 +1,8 @@
 'use client'
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Image} from "@nextui-org/react";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import React from "react";
-import { Menu, X } from '@geist-ui/icons'
+
 
 
 export default function Navigation() {
@@ -15,51 +16,34 @@ export default function Navigation() {
   ];
 
   return (
-    <Navbar shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
-      <Link href="/" color="foreground">
-        <NavbarBrand>
-          <p className="font-cormorantGaramond text-xl font-extrabold">Quranbound</p>
-        </NavbarBrand>
-      </Link>
-      {/* <NavbarContent className="hidden sm:flex gap-4 text-sm font-geistSans" justify="center">
+    <Navbar classNames={{ wrapper: 'max-w-full'}}>
+      <NavbarBrand>
+        <Link href='/' color="foreground" className='text-2xl font-semibold font-cormorantGaramond text-foreground'>
+          Quranbound
+        </Link>
+      </NavbarBrand>
+      <NavbarContent justify="center">
         <NavbarItem>
-          <Link color="foreground" href="/about">
-            About
-          </Link>
+          <Link color="foreground" href="/about">about</Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/courses">
-            Courses
-          </Link>
+          <Link color="foreground" href="/courses">courses</Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="/events">
-            Events
-          </Link>
-        </NavbarItem>
-      </NavbarContent> */}
-      <NavbarContent justify="end">
-        <NavbarMenuToggle
-          icon={Menu}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className=""
-        />
+        <SignedIn>
+          <NavbarItem>
+            <Link color="foreground" href="/student">student</Link>
+          </NavbarItem>
+        </SignedIn>
       </NavbarContent>
-      <NavbarMenu >
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color='foreground'
-              className="w-full text-base font-medium"
-              href={`/${item.toLowerCase()}`}
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-
+      <NavbarContent justify="end">
+        <SignedOut>
+          {/* <Button variant="solid" ><Link href="">Login</Link></Button> */}
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </NavbarContent>
     </Navbar>
   );
 }
