@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { auth } from '@clerk/nextjs';
+import { getAuth } from '@clerk/nextjs';
 import prisma from '@/utils/db';
 
 export default async function handler(req, res) {
-  const { userId } = auth(); // Clerk user ID
+  const { userId } = getAuth(req); // Clerk user ID
   if (!userId) return res.status(401).json({ message: 'Unauthorized' });
 
   try {
