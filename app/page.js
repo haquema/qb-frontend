@@ -1,5 +1,5 @@
-import CourseCard from "./courses/CourseCard";
-import courseList from "./courses/courseList";
+import CourseCard from "./course/CourseCard";
+import courseList from "./course/courseList";
 
 export default function Home() {
   return (
