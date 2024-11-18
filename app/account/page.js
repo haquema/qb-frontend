@@ -1,12 +1,15 @@
 import { Button, Divider } from "@nextui-org/react"
 import StripePortalButton from "./components/StripePortalButton"
+import { Suspense } from "react";
 import StripeCheckoutNotif from "./components/StripeCheckoutNotif"
 
-export default async function StudentDashboard() {
-  
+export default function StudentDashboard() {
   return (
     <div className="flex w-full justify-center bg-white h-full">
-      <StripeCheckoutNotif />
+      <Suspense fallback={<div>Loading payment notification...</div>}>
+        {/* Only wrap the client-side notification component in Suspense */}
+        <StripeCheckoutNotif />
+      </Suspense>
       <div className="flex flex-col items-start w-full p-10 gap-10 border border-green-500">
         <div className="w-full">
           <h2 className="uppercase text-black font-semibold">Details</h2>
@@ -22,7 +25,7 @@ export default async function StudentDashboard() {
           <h2 className="uppercase text-black font-semibold">Courses </h2>
           <Divider className="my-4"/>
           <div className="text-black flex text-sm flex-col gap-2">
-          <p>These are the courses that you've enrolled on. Click a course to start learning!</p>
+            <p>These are the courses that you've enrolled on. Click a course to start learning!</p>
           </div>
         </div>
         <div className="w-full">
