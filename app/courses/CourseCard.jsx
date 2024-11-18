@@ -10,7 +10,7 @@ export default function CourseCard({ index, courseItem }) {
       shadow="sm"
       key={index}
       isPressable
-      onPress={() => router.push(`/course/${courseItem.courseUrl}`)}
+      onPress={() => router.push(`/courses/${courseItem.courseUrl}`)}
       className="w-80 aspect-square"
     >
       <CardBody className="overflow-visible p-0">

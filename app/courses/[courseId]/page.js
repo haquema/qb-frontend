@@ -2,6 +2,7 @@
 import { Button, Card, CardBody } from "@nextui-org/react"
 import getStripe from "@/utils/get-stripe"
 import { createCheckoutSession } from "@/app/actions/createCheckoutSession";
+import Link from "next/link";
 
 const prices = {
   fullPayment: {
@@ -39,14 +40,17 @@ export default function Page() {
       <Card className="rounded-lg bg-neutral-500 w-60">
         <CardBody className="py-20 px-10 flex flex-col gap-2 items-center">
           <p>One time payment</p>
-          <Button className="bg-orange-100 rounded-md" onPress={() => handleCheckout(prices.fullPayment)}>
+          {/* <Button className="bg-orange-100 rounded-md" onPress={() => handleCheckout(prices.fullPayment)}>
             Enrol
-          </Button>
+          </Button> */}
+          <Link href='https://buy.stripe.com/test_fZeg2378ie4x1448ww'>
+            <Button color="primary">Buy</Button>
+          </Link>
         </CardBody>
       </Card>
       <Card className="rounded-lg bg-neutral-500 w-60">
         <CardBody className="py-20 px-10 flex flex-col gap-2 items-center">
-          <p>12 month recurring payment</p>
+          <p>12 monthly payment</p>
           <Button className="bg-orange-100 rounded-md" onPress={() => handleCheckout(prices.recurringPayment)}>
             Enrol
           </Button>

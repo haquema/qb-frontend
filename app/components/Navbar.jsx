@@ -2,7 +2,6 @@
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, Image, Dropdown, DropdownItem, DropdownTrigger, DropdownMenu} from "@nextui-org/react";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import React from "react";
-import { User } from '@geist-ui/icons'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -14,34 +13,20 @@ export default function Navigation() {
           Quranbound
         </Link>
       </NavbarBrand>
-      {/* <NavbarContent justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="/courses">courses</Link>
-        </NavbarItem>
-      </NavbarContent> */}
       <NavbarContent justify="end">
+        <NavbarItem>
+          <Button size="md" variant="light" className="text-white">Courses</Button>
+        </NavbarItem>
         <SignedOut>
-          <Dropdown>
-            <DropdownTrigger>
-              <Button
-                isIconOnly
-                variant="light"
-              >
-                <User size={20} color="lightblue" />
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu aria-label="Static Actions">
-              <DropdownItem key="regular"><SignInButton><Button color="primary" className="w-full">Account</Button></SignInButton></DropdownItem>
-              <DropdownItem key="student">
-                <Button color="default" className="w-full" onClick={() => window.location.href = 'https://quranbound.teachable.com/sign_in'}>
-                  Student Login
-                </Button>
-              </DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
+          <SignInButton><Button color="primary" className="text-md">Login</Button></SignInButton>
         </SignedOut>
         <SignedIn>
-          <UserButton />
+          <NavbarItem>
+            <Button size="md" variant="light" className="text-white" onClick={() => window.location.href = 'https://quranbound.teachable.com/sign_in'}>
+              Student
+            </Button>
+          </NavbarItem>
+          <UserButton userProfileUrl="/account" />
         </SignedIn>
       </NavbarContent>
     </Navbar>
