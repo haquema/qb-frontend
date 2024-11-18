@@ -14,8 +14,8 @@ export async function createCheckoutSession(priceId, transactionMode) {
         },
       ],
       mode: transactionMode,
-      success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/?success=true`,
-      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/?canceled=true`,
+      success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/account/?success=true`,
+      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/account/?canceled=true`,
     });
     return session.id; // Return the session ID to the client
   } catch (err) {

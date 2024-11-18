@@ -1,10 +1,12 @@
 import { Button, Divider } from "@nextui-org/react"
 import StripePortalButton from "./components/StripePortalButton"
+import StripeCheckoutNotif from "./components/StripeCheckoutNotif"
 
 export default async function StudentDashboard() {
   
   return (
     <div className="flex w-full justify-center bg-white h-full">
+      <StripeCheckoutNotif />
       <div className="flex flex-col items-start w-full p-10 gap-10 border border-green-500">
         <div className="w-full">
           <h2 className="uppercase text-black font-semibold">Details</h2>
