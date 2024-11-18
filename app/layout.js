@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <body
           className={`${geistSans.variable} ${geistMono.variable} ${cormorantGaramond.variable} ${barlow.variable} ${fahkwang.variable} antialiased`}
         >
-          <Toaster richColors position="top-center" />
+          <Toaster richColors position="top-center" closeButton />
           <NextUIProvider>
             <Navigation />
             {children}

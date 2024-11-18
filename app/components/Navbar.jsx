@@ -15,17 +15,12 @@ export default function Navigation() {
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button size="md" variant="light" className="text-white">Courses</Button>
+          <Link href="/courses"><Button size="md" radius="sm" variant="light" className="text-white">Courses</Button></Link>
         </NavbarItem>
         <SignedOut>
-          <SignInButton><Button color="primary" className="text-md">Login</Button></SignInButton>
+          <SignInButton><Button variant="ghost" radius="sm" size="md" color="primary" className="text-sm">Login</Button></SignInButton>
         </SignedOut>
         <SignedIn>
-          <NavbarItem>
-            <Button size="md" variant="light" className="text-white" onClick={() => window.location.href = 'https://quranbound.teachable.com/sign_in'}>
-              Student
-            </Button>
-          </NavbarItem>
           <UserButton userProfileUrl="/account" />
         </SignedIn>
       </NavbarContent>
